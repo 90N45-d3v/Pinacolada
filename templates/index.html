@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='icon.svg') }}">
+	<title>Pinacolada - Dashboard</title>
+	<meta author="90N45">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body class="bg-dark">
+	<div>
+		<nav class="navbar navbar-expand-lg navbar-light static-top shadow-sm" style="background-color: #343a40; border-bottom: solid; border-color: #00F955;">
+			<div class="container-fluid">
+				<a class="navbar-brand"><img src="{{ url_for('static', filename='icon.svg') }}" style="width: 35px;"></img></a>
+				<div class="navbar-collapse" id="navbarSupportedContent">
+					<ul class="nav">
+						<li class="nav-item">
+							<a class="nav-link disabled text-muted" href="/">Dashboard</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" style="color: #00F955;" href="/settings">Settings</a>
+						</li>
+					</ul>
+				</div>
+				<ul class="nav">
+					<li class="nav-item">
+						<a class="nav-link" style="color: #00F955;" href="/copyright">©</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	<br>
+	<br>
+	<div style="display: flex; justify-content: space-around;">
+		<div class="rounded" style="width: 35%; padding-top: 12.5%; position: relative; background-color: #343a40; display: flex; justify-content: center;">
+			<p class="text-muted" style="text-align: center; position: absolute; width: 100%; top: 0; font-size: 1vw;"><small><i>Deauthentication Frames</i></small></p>
+			<p class="text-light" style="text-align: center; position: absolute; width: 100%; top: 15%; font-size: 5vw;"><big>14</big></p>
+		</div>
+		<div class="rounded" style="width: 35%; padding-top: 12.5%; position: relative; background-color: #343a40; display: flex; justify-content: center;">
+			<p class="text-muted" style="text-align: center; position: absolute; width: 100%; top: 0; font-size: 1vw;"><small><i>Disassociation Frames</i></small></p>
+			<p class="text-light" style="text-align: center; position: absolute; width: 100%; top: 15%; font-size: 5vw;"><big>7</big></p>
+		</div>
+	</div>
+	<br>
+	<br>
+	<div style="display: flex; justify-content: space-around;">
+		<div class="rounded" style="width: 35%; padding-top: 12.5%; position: relative; background-color: #343a40; display: flex; justify-content: center;">
+			<p class="text-muted" style="text-align: center; position: absolute; width: 100%; top: 0; font-size: 1vw;"><small><i>Association Frames</i></small></p>
+			<p class="text-light" style="text-align: center; position: absolute; width: 100%; top: 15%; font-size: 5vw;"><big>3</big></p>
+		</div>
+		<div class="rounded" style="width: 35%; padding-top: 12.5%; position: relative; background-color: #343a40; display: flex; justify-content: center;">
+			<p class="text-muted" style="text-align: center; position: absolute; width: 100%; top: 0; font-size: 1vw;"><small><i>Up since</i></small></p>
+			<p class="text-light" style="text-align: center; position: absolute; width: 100%; top: 15%; font-size: 3.5vw;"><big>{{ start_time }}</big></p><p class="text-light" style="text-align: center; position: absolute; width: 100%; bottom: 0; font-size: 1.5vw;"><small>{{ start_day }}</small></p>
+		</div>
+	</div>
+</body>
+</html>
