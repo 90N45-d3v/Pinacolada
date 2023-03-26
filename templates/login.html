@@ -13,14 +13,17 @@
 <body class="bg-dark">
 	<br>
 	<br>
-	<div class="rounded" style="width: 500px; max-width: 90%; padding-top: 15%; position: relative; background-color: #343a40; margin: auto; display: flex; justify-content: center;">
-		<img src="{{ url_for('static', filename='icon.svg') }}" style="width: 10vw; position: absolute; top: 1vw;">
-		<div class="input-group mb-3" style="position: relative; width: 90%; bottom: 1vw">
+	<div class="rounded" style="width: 500px; max-width: 90%; background-color: #343a40; margin: auto;">
+		<img src="{{ url_for('static', filename='logo.svg') }}" style="width: 90%; top: 1vw; margin-left: auto; margin-right: auto; display: block;">
+		<br>
+		<div class="input-group mb-3" style="width: 90%; bottom: 0; margin-left: auto; margin-right: auto; display: block;">
 			<form method="post" style="width: 100%;">
-				<input type="password" name="passwd" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+				<input type="password" name="user_pass" class="form-control text-muted" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" style="text-align: center;">
+				<br>
+				<button type="submit" class="btn" style="border: solid; border-color: #00F955; width: 100%; color: #00F955;">Enter</button>
 			</form>
 		</div>
-		<br>
+		<p class="text-muted" style="text-align: center; width: 100%; font-size: 15px;"><small><i>{{ message }}<br></i></small></p>
 	</div>
 </body>
 </html>

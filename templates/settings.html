@@ -35,5 +35,48 @@
 	</div>
 	<br>
 	<br>
+	<div class="container text-light">
+		<form method="post">
+			<h4>Webserver</h4>
+			<div class="input-group mb-3" style="width: 500px; max-width: 100%">
+				<span class="input-group-text" id="basic-addon1">IP Address</span>
+				<input type="text" class="form-control" placeholder="{{ ip }}" aria-label="{{ ip }}" aria-describedby="basic-addon1" name="user_ip">
+			</div>
+			<div class="input-group mb-3" style="width: 500px; max-width: 100%">
+				<span class="input-group-text" id="basic-addon1">Port</span>
+				<input type="text" class="form-control" placeholder="{{ port }}" aria-label="{{ port }}" aria-describedby="basic-addon1" name="user_port">
+			</div>
+			<div class="input-group mb-3" style="width: 500px; max-width: 100%">
+				<span class="input-group-text" id="basic-addon1">Password</span>
+				<input type="password" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="user_pass">
+			</div>
+			<br>
+			<h4>802.11 Frame sensitivity</h4>
+			<div class="input-group mb-3" style="width: 500px; max-width: 100%">
+				<span class="input-group-text" id="basic-addon1">Deauthentication Frames</span>
+				<input type="number" class="form-control" placeholder="{{ deauth_limit }}" aria-label="{{ deauth_limit }}" aria-describedby="basic-addon1" name="user_deauth">
+			</div>
+			<div class="input-group mb-3" style="width: 500px; max-width: 100%">
+				<span class="input-group-text" id="basic-addon1">Disassociation Frames</span>
+				<input type="number" class="form-control" placeholder="{{ disassoc_limit }}" aria-label="{{ disassoc_limit }}" aria-describedby="basic-addon1" name="user_disassoc">
+			</div>
+			<div class="input-group mb-3" style="width: 500px; max-width: 100%">
+				<span class="input-group-text" id="basic-addon1">Association Frames</span>
+				<input type="number" class="form-control" placeholder="{{ assoc_limit }}" aria-label="{{ assoc_limit }}" aria-describedby="basic-addon1" name="user_assoc">
+			</div>
+			<br>
+			<h4>Evil Twin</h4>
+			<div class="form-check">
+				<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="user_unencrypted_eviltwin" {{ eviltwin_unenc }}>
+				<label class="form-check-label" for="flexCheckDefault">Alert on the appearance of an open network, which already exists encrypted</label>
+			</div>
+			<br>
+			<br>
+			<button type="submit" class="btn" style="border: solid; border-color: #00F955; width: 100%; color: #00F955;">Save</button>
+			<p class="text-muted" style="text-align: center; width: 100%; font-size: 15px;"><small><i>These changes only apply after a reboot...<br></i></small></p>
+			<br>
+			<br>
+		</form>
+	</div>
 </body>
 </html>
