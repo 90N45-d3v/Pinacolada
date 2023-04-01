@@ -7,8 +7,7 @@
 	<title>Pinacolada - Settings</title>
 	<meta author="90N45">
 
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
 </head>
 <body class="bg-dark">
 	<div>
@@ -37,43 +36,72 @@
 	<br>
 	<div class="container text-light">
 		<form method="post">
-			<h4>Webserver</h4>
-			<div class="input-group mb-3" style="width: 500px; max-width: 100%">
-				<span class="input-group-text" id="basic-addon1">IP Address</span>
-				<input type="text" class="form-control" placeholder="{{ ip }}" aria-label="{{ ip }}" aria-describedby="basic-addon1" name="user_ip">
+			<div style="display: flex; flex-flow: wrap;">
+				<div style="max-width: 100%">
+					<h4>Webserver</h4>
+					<div class="input-group mb-3" style="width: 500px; max-width: 100%">
+						<span class="input-group-text text-light" id="basic-addon1" style="border-left: solid; border-top: solid; border-bottom: solid; border-color: #00F955; background-color: #343a40;">IP Address</span>
+						<input type="text" class="form-control bg-dark text-light" placeholder="{{ ip }}" aria-label="{{ ip }}" aria-describedby="basic-addon1" name="user_ip" style="border: solid; border-color: #00F955;">
+					</div>
+					<div class="input-group mb-3" style="width: 500px; max-width: 100%">
+						<span class="input-group-text text-light" id="basic-addon1" style="border-left: solid; border-top: solid; border-bottom: solid; border-color: #00F955; background-color: #343a40;">Port</span>
+						<input type="text" class="form-control bg-dark text-light" placeholder="{{ port }}" aria-label="{{ port }}" aria-describedby="basic-addon1" name="user_port" style="border: solid; border-color: #00F955;">
+					</div>
+					<div class="input-group mb-3" style="width: 500px; max-width: 100%">
+						<span class="input-group-text text-light" id="basic-addon1" style="border-left: solid; border-top: solid; border-bottom: solid; border-color: #00F955; background-color: #343a40;">Password</span>
+						<input type="password" class="form-control bg-dark text-light" placeholder="**********" aria-label="**********" aria-describedby="basic-addon1" name="user_pass" style="border: solid; border-color: #00F955;">
+					</div>
+					<br>
+					<h4>802.11 Frame Sensitivity<p class="text-muted" style="font-size: 15px;"><small><i>(Allowed frames per minute)</i></small></p></h4>
+					<div class="input-group mb-3" style="width: 500px; max-width: 100%">
+						<span class="input-group-text text-light" id="basic-addon1" style="border-left: solid; border-top: solid; border-bottom: solid; border-color: #00F955; background-color: #343a40;">Deauthentication Frames</span>
+						<input type="number" class="form-control bg-dark text-light" placeholder="{{ deauth_limit }}" aria-label="{{ deauth_limit }}" aria-describedby="basic-addon1" name="user_deauth" style="border: solid; border-color: #00F955;">
+					</div>
+					<div class="input-group mb-3" style="width: 500px; max-width: 100%">
+						<span class="input-group-text text-light" id="basic-addon1" style="border-left: solid; border-top: solid; border-bottom: solid; border-color: #00F955; background-color: #343a40;">Disassociation Frames</span>
+						<input type="number" class="form-control bg-dark text-light" placeholder="{{ disassoc_limit }}" aria-label="{{ disassoc_limit }}" aria-describedby="basic-addon1" name="user_disassoc" style="border: solid; border-color: #00F955;">
+					</div>
+					<div class="input-group mb-3" style="width: 500px; max-width: 100%">
+						<span class="input-group-text text-light" id="basic-addon1" style="border-left: solid; border-top: solid; border-bottom: solid; border-color: #00F955; background-color: #343a40;">Authentication Frames</span>
+						<input type="number" class="form-control bg-dark text-light" placeholder="{{ auth_limit }}" aria-label="{{ auth_limit }}" aria-describedby="basic-addon1" name="user_auth" style="border: solid; border-color: #00F955;">
+					</div>
+					<br>
+					<h4>Evil Twin</h4>
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" style="background-color: #00F955!important" value="" id="flexCheckDefault" name="user_unencrypted_eviltwin" {{ eviltwin_unenc }}>
+						<label class="form-check-label" for="flexCheckDefault">Alert on the appearance of an open network, which already exists encrypted</label>
+						<br>
+					</div>
+					<br>
+				</div>
+					<div style="max-width: 100%">
+						<h4>E-Mail Alert<p class="text-muted" style="font-size: 15px;"><small><i>(You need an email account from which Pinacolada can send updates)</i></small></p></h4>
+					<div class="input-group mb-3" style="width: 500px; max-width: 100%">
+						<span class="input-group-text text-light" id="basic-addon1" style="border-left: solid; border-top: solid; border-bottom: solid; border-color: #00F955; background-color: #343a40;">Pinacolada's E-Mail</span>
+						<input type="email" class="form-control bg-dark text-light" placeholder="{{ mail_sender }}" aria-label="{{ mail_sender }}" aria-describedby="basic-addon1" name="user_mail_sender" style="border: solid; border-color: #00F955;">
+					</div>
+					<div class="input-group mb-3" style="width: 500px; max-width: 100%">
+						<span class="input-group-text text-light" id="basic-addon1" style="border-left: solid; border-top: solid; border-bottom: solid; border-color: #00F955; background-color: #343a40;">Pinacolada's SMTP Server (TLS)</span>
+						<input type="text" class="form-control bg-dark text-light" placeholder="{{ smtp_server }}" aria-label="{{ smtp_server }}" aria-describedby="basic-addon1" name="user_smtp_server" style="border: solid; border-color: #00F955;">
+					</div>
+					<div class="input-group mb-3" style="width: 500px; max-width: 100%">
+						<span class="input-group-text text-light" id="basic-addon1" style="border-left: solid; border-top: solid; border-bottom: solid; border-color: #00F955; background-color: #343a40;">SMTP Server's Port</span>
+						<input type="number" class="form-control bg-dark text-light" placeholder="{{ smtp_port }}" aria-label="{{ smtp_port }}" aria-describedby="basic-addon1" name="user_smtp_port" style="border: solid; border-color: #00F955;">
+					</div>
+					<div class="input-group mb-3" style="width: 500px; max-width: 100%">
+						<span class="input-group-text text-light" id="basic-addon1" style="border-left: solid; border-top: solid; border-bottom: solid; border-color: #00F955; background-color: #343a40;">Password</span>
+						<input type="password" class="form-control bg-dark text-light" placeholder="**********" aria-label="**********" aria-describedby="basic-addon1" name="user_mail_sender_pass" style="border: solid; border-color: #00F955;">
+					</div>
+					<br>
+					<div class="input-group mb-3" style="width: 500px; max-width: 100%">
+						<span class="input-group-text text-light" id="basic-addon1" style="border-left: solid; border-top: solid; border-bottom: solid; border-color: #00F955; background-color: #343a40;">Send to</span>
+						<input type="email" class="form-control bg-dark text-light" placeholder="{{ mail_reciever }}" aria-label="{{ mail_reciever }}" aria-describedby="basic-addon1" name="user_mail_reciever" style="border: solid; border-color: #00F955;">
+					</div>
+				</div>
 			</div>
-			<div class="input-group mb-3" style="width: 500px; max-width: 100%">
-				<span class="input-group-text" id="basic-addon1">Port</span>
-				<input type="text" class="form-control" placeholder="{{ port }}" aria-label="{{ port }}" aria-describedby="basic-addon1" name="user_port">
-			</div>
-			<div class="input-group mb-3" style="width: 500px; max-width: 100%">
-				<span class="input-group-text" id="basic-addon1">Password</span>
-				<input type="password" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="user_pass">
-			</div>
-			<br>
-			<h4>802.11 Frame sensitivity</h4>
-			<div class="input-group mb-3" style="width: 500px; max-width: 100%">
-				<span class="input-group-text" id="basic-addon1">Deauthentication Frames</span>
-				<input type="number" class="form-control" placeholder="{{ deauth_limit }}" aria-label="{{ deauth_limit }}" aria-describedby="basic-addon1" name="user_deauth">
-			</div>
-			<div class="input-group mb-3" style="width: 500px; max-width: 100%">
-				<span class="input-group-text" id="basic-addon1">Disassociation Frames</span>
-				<input type="number" class="form-control" placeholder="{{ disassoc_limit }}" aria-label="{{ disassoc_limit }}" aria-describedby="basic-addon1" name="user_disassoc">
-			</div>
-			<div class="input-group mb-3" style="width: 500px; max-width: 100%">
-				<span class="input-group-text" id="basic-addon1">Association Frames</span>
-				<input type="number" class="form-control" placeholder="{{ assoc_limit }}" aria-label="{{ assoc_limit }}" aria-describedby="basic-addon1" name="user_assoc">
-			</div>
-			<br>
-			<h4>Evil Twin</h4>
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="user_unencrypted_eviltwin" {{ eviltwin_unenc }}>
-				<label class="form-check-label" for="flexCheckDefault">Alert on the appearance of an open network, which already exists encrypted</label>
-			</div>
-			<br>
 			<br>
 			<button type="submit" class="btn" style="border: solid; border-color: #00F955; width: 100%; color: #00F955;">Save</button>
-			<p class="text-muted" style="text-align: center; width: 100%; font-size: 15px;"><small><i>These changes only apply after a reboot...<br></i></small></p>
+			<p class="text-muted" style="text-align: center; width: 100%; font-size: 15px;"><small><i>These changes only apply after restarting Pinacolada.<br>Placeholders show only the settings that are currently in use...<br></i></small></p>
 			<br>
 			<br>
 		</form>
