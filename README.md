@@ -28,3 +28,17 @@ pip install flask multiprocessing
 # Start Pinacolada
 python main.py
 ````
+
+### Usage
+Pinacolada will be accessible from your browser at `127.0.0.1:8888`.  
+The default password is `CoconutsAreYummy`.  
+After you have logged in, you can see a dashboard on the start page and you should change the password in the settings tab.
+
+### E-Mail Notifications
+<p>If configured, Pinacolada will alert you to attacks via E-Mail. In order to send you an E-Mail, however, an E-Mail account for Pinacolada must be specified in the settings tab. To find the necessary information such as SMTP server and SMTP port, search the internet for your mail provider and how their SMTP servers are configured + how to use them. Here are some information about known providers:</p>
+
+| Provider | SMTP Server | SMTP Port (TLS)
+| ------- | --------- | --------- |
+| Gmail | smtp.gmail.com | 587 |
+| Outlook | smtp.office365.com | 587 |
+| GoDaddy | smtpout.secureserver.net | 587 |
