@@ -138,10 +138,10 @@ def login():
 
 if __name__ == "__main__":
     print("\n")
-    # if coconut.check() == "not found":
-    #     print(" * Connect your WiFi Coconut\n")
-        # while coconut.check() == "not found":
-        #     time.sleep(1)
+    if coconut.check() == "not found":
+        print(" * Connect your WiFi Coconut")
+        while coconut.check() == "not found":
+            time.sleep(1)
     print(" * Starting WiFi Coconut")
     coconut.start()
 

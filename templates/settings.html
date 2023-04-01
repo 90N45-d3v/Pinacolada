@@ -66,9 +66,9 @@
 						<input type="number" class="form-control bg-dark text-light" placeholder="{{ auth_limit }}" aria-label="{{ auth_limit }}" aria-describedby="basic-addon1" name="user_auth" style="border: solid; border-color: #00F955;">
 					</div>
 					<br>
-					<h4>Evil Twin</h4>
+					<h4>Evil Twin (available soon...)</h4>
 					<div class="form-check">
-						<input class="form-check-input" type="checkbox" style="background-color: #00F955!important" value="" id="flexCheckDefault" name="user_unencrypted_eviltwin" {{ eviltwin_unenc }}>
+						<input class="form-check-input" type="checkbox" style="background-color: #00F955!important" value="" id="flexCheckDefault" name="user_unencrypted_eviltwin" {{ eviltwin_unenc }} disabled>
 						<label class="form-check-label" for="flexCheckDefault">Alert on the appearance of an open network, which already exists encrypted</label>
 						<br>
 					</div>
