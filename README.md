@@ -23,7 +23,7 @@ git clone https://github.com/90N45-d3v/Pinacolada
 cd Pinacolada
 
 # Install required packages via pip
-pip install flask multiprocessing
+pip install flask
 
 # Start Pinacolada
 python main.py
