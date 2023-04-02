@@ -42,3 +42,6 @@ After you have logged in, you can see a dashboard on the start page and you shou
 | Gmail | smtp.gmail.com | 587 |
 | Outlook | smtp.office365.com | 587 |
 | GoDaddy | smtpout.secureserver.net | 587 |
+
+### Not fully tested!
+Since I don't own a WiFi Coconut myself, I have to simulate their traffic. So if you encounter any problems, don't hesitate to contact me and open an issue.
