@@ -22,8 +22,9 @@
 git clone https://github.com/90N45-d3v/Pinacolada
 cd Pinacolada
 
-# Install required packages via pip
+# Install required packages
 pip install flask
+apt install tshark
 
 # Start Pinacolada
 python main.py
