@@ -3,6 +3,9 @@
  <img src="https://img.shields.io/badge/Made%20with-Python-blue">
  <img src="https://img.shields.io/github/license/90N45-d3v/Pinacolada.svg">
  <img src="https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg">
+ <br>
+ <img src="https://img.shields.io/badge/-Linux-lightblue">
+ <img src="https://img.shields.io/badge/-MacOS-lightgrey">
 </p>
 <h3 align="center">Wireless Intrusion Detection System for Hak5's WiFi Coconut</h3>
 <p>Pinacolada looks for typical IEEE 802.11 attacks and then informs you about them as quickly as possible. All this with the help of <a href="https://hak5.org/products/wifi-coconut">Hak5's WiFi Coconut</a>, which allows it to listen for threats on all 14 channels in the 2.4GHz range simultaneously.</p>
