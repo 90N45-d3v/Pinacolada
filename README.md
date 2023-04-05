@@ -19,15 +19,24 @@
 | EvilTwin | MiTM | 🔜 |
 | KARMA | MiTM | 🔜 |
 
+### Dependencies
+#### MacOS (With PIP/Python and Homebrew package manager)
+````
+pip install flask
+brew install wireshark
+````
+#### Linux (With PIP/Python and APT package manager)
+````
+pip install flask
+apt install tshark
+````
+
+For both operating systems install the [WiFi Coconut's userspace](https://docs.hak5.org/wifi-coconut/software-and-drivers/wifi-coconut-software)
 ### Installation
 ````
 # Download Pinacolada
 git clone https://github.com/90N45-d3v/Pinacolada
 cd Pinacolada
-
-# Install required packages
-pip install flask
-apt install tshark
 
 # Start Pinacolada
 python main.py
