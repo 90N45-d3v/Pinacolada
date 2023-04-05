@@ -32,7 +32,11 @@ def start():
 	stream_file = open("/tmp/coconut_stream", "x")
 	stream_file.close()
 
+	# Delete this if you want to use a single network adapter (no WiFi Coconut)
 	os.popen("wifi_coconut --no-display --quit --wait --pcap=- 2> /dev/null | tshark -r - -E separator=\"%\" -Y \"wlan.fc.type_subtype == 0x000c or wlan.fc.type_subtype == 0x000a or wlan.fc.type_subtype == 0x000b\" -T fields -e wlan.fc.type_subtype -e wlan_radio.channel -e wlan.ta -e wlan.ra -e frame.number > /tmp/coconut_stream 2> /dev/null &")
+	
+	# Uncomment this if you want to use a single network adapter (no WiFi Coconut)
+	# os.popen("tshark -i <YOUR WIFI INTERFACE IN MONITOR MODE> -E separator=\"%\" -Y \"wlan.fc.type_subtype == 0x000c or wlan.fc.type_subtype == 0x000a or wlan.fc.type_subtype == 0x000b\" -T fields -e wlan.fc.type_subtype -e wlan_radio.channel -e wlan.ta -e wlan.ra -e frame.number > /tmp/coconut_stream 2> /dev/null &")
 
 def guard():
 	deauth_count = []

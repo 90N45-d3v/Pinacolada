@@ -137,12 +137,14 @@ def login():
         return render_template("login.html", message="")
 
 if __name__ == "__main__":
+    # Delete this if you want to use a single network adapter (no WiFi Coconut)
     print("\n")
     if coconut.check() == "not found":
         print(" * Connect your WiFi Coconut")
         while coconut.check() == "not found":
             time.sleep(1)
     print(" * Starting WiFi Coconut")
+    ####
     coconut.start()
 
     print(" * Starting Guard")
